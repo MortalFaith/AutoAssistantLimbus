@@ -1,0 +1,27 @@
+# my.kv
+
+# 定义我们的 ScreenManager，并包含 Function1Screen
+ScreenManager:
+    Function1Screen:
+        name: 'function1'
+
+<Function1Screen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: "体力识别"
+            font_size: '24sp'
+            size_hint_y: 0.2
+
+        Label:
+            font_size: '20sp'
+            text: f"现在的体力值是 {root.current_enkephalin}，距离回满还有 {root.time_to_full}"
+
+        Button:
+            text: "体力识别"
+            size_hint_y: 0.1
+            # 将按钮的 on_press 事件绑定到 Function1Screen 的 rec_enkephalin 方法
+            on_press: root.update_status()
