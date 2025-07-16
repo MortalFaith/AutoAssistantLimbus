@@ -2,3 +2,4 @@ test.py
 /ocr_results
 /current
 /.idea
+/__pycache__
